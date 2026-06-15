@@ -1,0 +1,24 @@
+# Progress
+
+- Active goal: play the running Pokemon FireRed game while giving Japanese commentary.
+- Controls observed:
+  - `horipad dpad` moves the character when the MagicHID serial port is available.
+  - `a` selected menu entries earlier.
+  - Short taps can be missed. Field dialogue/confirm is reliable with `a` held for about 500-800 ms.
+  - `b` backed out of menus earlier.
+  - `plus` opened the field menu earlier, but did not open it in Oak's lab during a previous check.
+- Last visual evidence:
+  - `latest.png` shows the player on Route 1's upper path near the grass and top split.
+  - `latest.png` is stale: last modified 2026-06-06 11:58:33.
+  - `route1_top_grid.png` matches the visible Route 1 area.
+- Current environment check on 2026-06-07 06:03 JST:
+  - `.gptwitch/runtime.json` says the Switch controller port is `COM8`.
+  - Windows currently reports only `COM3`, `COM4`, `COM5`, and `COM6`; the registry maps these to Bluetooth modem devices.
+  - `magichid --port COM8 horipad release-all` fails with FileNotFound because `COM8` is not present.
+  - OBS can be started from `C:\Program Files\obs-studio\bin\64bit\obs64.exe`; after startup, `obs.capture_screen` connects but fails with `Failed to render screenshot`.
+  - `latest.png` is still stale: last modified 2026-06-06 11:58:33.
+- Next step when the host is reconnected:
+  - Confirm live screen capture works.
+  - Confirm the MagicHID serial port is present, then update `tools/pad.ps1`'s `-Port` value if it is no longer `COM8`.
+  - Run `powershell -ExecutionPolicy Bypass -File tools/check-runtime.ps1`; it now shows the serial device map as well as available COM ports.
+  - From the Route 1 upper split, move left to the vertical road and continue north toward Viridian City.

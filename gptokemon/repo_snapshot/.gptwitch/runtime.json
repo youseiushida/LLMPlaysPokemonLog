@@ -1,0 +1,11 @@
+{
+  "switchPort": "COM8",
+  "obsSource": "Switch",
+  "updatedAt": "2026-06-07T15:43:28.366Z",
+  "magichidExamples": [
+    "magichid --port COM8 horipad tap --button a",
+    "magichid --port COM8 horipad hold --button a --duration-ms 650 --interval-ms 50",
+    "magichid --port COM8 horipad dpad --direction down --duration-ms 170 --interval-ms 50",
+    "magichid --port COM8 horipad release-all"
+  ]
+}
